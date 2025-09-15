@@ -1,71 +1,71 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import {
   Mail, Phone, MapPin, Briefcase, GraduationCap, Code,
-  Database, Package, Sparkles, ArrowRightCircle, Github, Linkedin,
+  Database, Package, Sparkles, Github, Linkedin,
   Download, ExternalLink, Calendar, Award, Zap, Target, Users,
   TrendingUp, Star, ChevronDown, Menu, X
 } from "lucide-react";
 
 // ---- Enhanced Animation Variants ----
-const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: (i: number = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: { 
-      delay: i * 0.15, 
-      type: "spring", 
-      stiffness: 100,
-      damping: 12
-    }
-  })
-};
+// const fadeUp = {
+//   hidden: { opacity: 0, y: 60 },
+//   visible: (i: number = 1) => ({
+//     opacity: 1,
+//     y: 0,
+//     transition: { 
+//       delay: i * 0.15, 
+//       type: "spring", 
+//       stiffness: 100,
+//       damping: 12
+//     }
+//   })
+// };
 
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, type: "spring" } }
-};
+// const fadeInLeft = {
+//   hidden: { opacity: 0, x: -50 },
+//   visible: { opacity: 1, x: 0, transition: { duration: 0.8, type: "spring" } }
+// };
 
-const fadeInRight = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, type: "spring" } }
-};
+// const fadeInRight = {
+//   hidden: { opacity: 0, x: 50 },
+//   visible: { opacity: 1, x: 0, transition: { duration: 0.8, type: "spring" } }
+// };
 
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { 
-    opacity: 1, 
-    scale: 1, 
-    transition: { 
-      duration: 0.6,
-      type: "spring",
-      stiffness: 100
-    } 
-  }
-};
+// const scaleIn = {
+//   hidden: { opacity: 0, scale: 0.8 },
+//   visible: { 
+//     opacity: 1, 
+//     scale: 1, 
+//     transition: { 
+//       duration: 0.6,
+//       type: "spring",
+//       stiffness: 100
+//     } 
+//   }
+// };
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3
-    }
-  }
-};
+// const staggerContainer = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 0.1,
+//       delayChildren: 0.3
+//     }
+//   }
+// };
 
-const floatingAnimation = {
-  animate: {
-    y: [0, -10, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
-};
+// const floatingAnimation = {
+//   animate: {
+//     y: [0, -10, 0],
+//     transition: {
+//       duration: 3,
+//       repeat: Infinity,
+//       ease: "easeInOut"
+//     }
+//   }
+// };
 
 // ---- Enhanced Data ----
 const DATA = {
@@ -214,7 +214,7 @@ const GlassCard: React.FC<{ children: React.ReactNode; className?: string; hover
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true, amount: 0.1 }}
-    variants={scaleIn}
+  
     whileHover={hover ? { 
       scale: 1.02, 
       boxShadow: "0 20px 40px rgba(168, 85, 247, 0.1)",
@@ -251,7 +251,6 @@ const AnimatedCounter: React.FC<{ value: string; label: string; icon: React.Elem
 
   return (
     <motion.div
-      variants={scaleIn}
       className="text-center p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 border border-purple-300/30"
     >
       <Icon className="w-8 h-8 mx-auto mb-2 text-purple-300" />
@@ -341,7 +340,7 @@ const ProjectCard: React.FC<{ project: typeof DATA.projects[0]; index: number }>
       </div>
 
       <div className="flex flex-wrap gap-2 mb-4">
-        {project.stack.map((tech, i) => (
+        {project.stack.map((tech) => (
           <span
             key={tech}
             className="px-3 py-1 rounded-full text-xs bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/30 text-purple-200"
@@ -469,7 +468,7 @@ const Aurora: React.FC = () => (
 const SureshClaudePortfolio: React.FC = () => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, 50]);
-  const y2 = useTransform(scrollY, [0, 300], [0, -50]);
+  // const y2 = useTransform(scrollY, [0, 300], [0, -50]);
   
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -494,7 +493,6 @@ const SureshClaudePortfolio: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <motion.div
-              variants={fadeInLeft}
               initial="hidden"
               animate="visible"
               className="flex items-center gap-4"
@@ -513,7 +511,6 @@ const SureshClaudePortfolio: React.FC = () => {
 
             {/* Desktop Navigation */}
             <motion.nav
-              variants={fadeInRight}
               initial="hidden"
               animate="visible"
               className="hidden md:flex items-center gap-6"
@@ -649,13 +646,12 @@ const SureshClaudePortfolio: React.FC = () => {
 
           {/* Stats Section */}
           <motion.div
-            variants={staggerContainer}
             initial="hidden"
             animate="visible"
             className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
           >
             {DATA.stats.map((stat, index) => (
-              <AnimatedCounter key={stat.label} {...stat} />
+              <AnimatedCounter key={index} {...stat} />
             ))}
           </motion.div>
 
@@ -698,7 +694,6 @@ const SureshClaudePortfolio: React.FC = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              variants={fadeInLeft}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -738,7 +733,6 @@ const SureshClaudePortfolio: React.FC = () => {
             </motion.div>
 
             <motion.div
-              variants={fadeInRight}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -758,7 +752,7 @@ const SureshClaudePortfolio: React.FC = () => {
                   Languages
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {DATA.languages.map((lang, index) => (
+                  {DATA.languages.map((lang) => (
                     <span
                       key={lang}
                       className="px-3 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/30 text-purple-200 text-sm"
