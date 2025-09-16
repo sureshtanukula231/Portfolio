@@ -54,7 +54,7 @@ const DATA = {
   location: "Mogaltur, Andhra Pradesh, India",
   phone: "+91 8096326535",
   email: "tanukulasuresh31@gmail.com",
-  github: "#",
+  github: "",
   linkedin: "https://www.linkedin.com/in/suresh-tanukula-11a85b1b6",
   summary: "Passionate .NET architect with 5.8+ years of experience building scalable enterprise applications. I transform complex business requirements into elegant, high-performance solutions that drive business growth.",
   objective: "To lead innovative development teams in creating next-generation enterprise applications that exceed expectations and deliver measurable business value.",
@@ -139,7 +139,7 @@ const DATA = {
       description: "High-performance enterprise management system handling complex workflows and real-time data processing.",
       highlights: ["99.9% uptime", "Real-time processing"],
       code: "",
-      demo: "#"
+      demo: ""
     },
     {
       name: "Curvature Applications",
@@ -149,7 +149,7 @@ const DATA = {
       + "debugging based on client requirement",
       highlights: ["Custom workflows", "Advanced analytics"],
       code: "",
-      demo: "#"
+      demo: ""
     },
     {
       name: "SxeConsoleApplication",
@@ -158,7 +158,7 @@ const DATA = {
       description: "It mainly works on getting data from Square Table and sending it to SXE after integrating with the SXE API.Involved in each phase of the project, taking requirements from clients and developing the application.",
       highlights: ["Real-time updates","Automated reports"],
       code: "",
-      demo: "#"
+      demo: ""
     },
     {
       name: "TfsRemainderMails",
@@ -167,7 +167,7 @@ const DATA = {
       description: "Our system sends reminder emails when resources fail to fill timesheets. The emails are triggered every week start day.",
       highlights: ["Real-time updates","Automated reports"],
       code: "",
-      demo: "#"
+      demo: ""
     },
     {
       name: "HR-Portal",
@@ -177,7 +177,7 @@ const DATA = {
       + "contentand design",
       highlights: ["Custom workflows", "Advanced analytics"],
       code: "",
-      demo: "#"
+      demo: ""
     }
   ],
   skills: {
@@ -390,7 +390,7 @@ const ExperienceCard: React.FC<{ job: typeof DATA.experience[0]; index: number }
     className="relative"
   >
     <GlassCard>
-      <div className="absolute -left-4 top-8 w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 border-2 border-white/20 shadow-lg" />
+      <div className="absolute -left-4 top-2 w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 border-2 border-white/20 shadow-lg" />
       
       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
         <div>
@@ -781,7 +781,7 @@ const SureshClaudePortfolio: React.FC = () => {
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href={DATA.github}
+                  href={DATA.github || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 p-4 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 hover:from-gray-700 hover:to-gray-600 transition-all duration-300 flex items-center gap-3 text-white"
@@ -1017,7 +1017,7 @@ const SureshClaudePortfolio: React.FC = () => {
                   <motion.a
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    href={DATA.github}
+                    href={DATA.github || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
