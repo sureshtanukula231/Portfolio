@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import {
   Mail, Phone, MapPin, Briefcase, GraduationCap, Code,
@@ -8,82 +8,60 @@ import {
 } from "lucide-react";
 
 // ---- Enhanced Animation Variants ----
-// const fadeUp = {
-//   hidden: { opacity: 0, y: 60 },
-//   visible: (i: number = 1) => ({
-//     opacity: 1,
-//     y: 0,
-//     transition: { 
-//       delay: i * 0.15, 
-//       type: "spring", 
-//       stiffness: 100,
-//       damping: 12
-//     }
-//   })
-// };
 
-// const fadeInLeft = {
-//   hidden: { opacity: 0, x: -50 },
-//   visible: { opacity: 1, x: 0, transition: { duration: 0.8, type: "spring" } }
-// };
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, type: "spring" } }
+} as const;
 
-// const fadeInRight = {
-//   hidden: { opacity: 0, x: 50 },
-//   visible: { opacity: 1, x: 0, transition: { duration: 0.8, type: "spring" } }
-// };
+const fadeInRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, type: "spring" } }
+} as const;
 
-// const scaleIn = {
-//   hidden: { opacity: 0, scale: 0.8 },
-//   visible: { 
-//     opacity: 1, 
-//     scale: 1, 
-//     transition: { 
-//       duration: 0.6,
-//       type: "spring",
-//       stiffness: 100
-//     } 
-//   }
-// };
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { 
+    opacity: 1, 
+    scale: 1, 
+    transition: { 
+      duration: 0.6,
+      type: "spring",
+      stiffness: 100
+    } 
+  }
+} as const;
 
-// const staggerContainer = {
-//   hidden: { opacity: 0 },
-//   visible: {
-//     opacity: 1,
-//     transition: {
-//       staggerChildren: 0.1,
-//       delayChildren: 0.3
-//     }
-//   }
-// };
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3
+    }
+  }
+} as const;
 
-// const floatingAnimation = {
-//   animate: {
-//     y: [0, -10, 0],
-//     transition: {
-//       duration: 3,
-//       repeat: Infinity,
-//       ease: "easeInOut"
-//     }
-//   }
-// };
+
 
 // ---- Enhanced Data ----
 const DATA = {
   name: "Tanukula Suresh",
   title: "Senior .NET Developer",
-  subtitle: "Full-Stack Enterprise Solutions Architect",
+  subtitle: "Full-Stack Developer",
   location: "Mogaltur, Andhra Pradesh, India",
   phone: "+91 8096326535",
   email: "tanukulasuresh31@gmail.com",
-  github: "https://github.com/suresh31",
-  linkedin: "https://linkedin.com/in/tanukulasuresh31",
+  github: "",
+  linkedin: "www.linkedin.com/in/suresh-tanukula-11a85b1b6",
   summary: "Passionate .NET architect with 5.8+ years of experience building scalable enterprise applications. I transform complex business requirements into elegant, high-performance solutions that drive business growth.",
   objective: "To lead innovative development teams in creating next-generation enterprise applications that exceed expectations and deliver measurable business value.",
   stats: [
-    { label: "Years Experience", value: "5.8+", icon: Calendar },
+    { label: "Years Experience", value: "5+", icon: Calendar },
     { label: "Projects Delivered", value: "5+", icon: Award },
     { label: "Code Quality Score", value: "98%", icon: Star },
-    // { label: "Team Members Mentored", value: "2+", icon: Users }
+    { label: "Team Members Mentored", value: "5+", icon: Users }
   ],
   experience: [
     {
@@ -91,12 +69,11 @@ const DATA = {
       role: "Senior Software Developer",
       start: "Jan 2025", 
       end: "Present",
-      location: "Remote",
+      location: "On-site",
       type: "Full-time",
       bullets: [
-        "Architected and delivered 5+ enterprise-grade web applications using ASP.NET Core/MVC",
-        "Led a team of 4 developers, improving overall productivity by 40%",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
+        "Architected and delivered web applications using ASP.NET Core/MVC",
+        "Led a team of 4 developers, improving overall productivity",
         "Mentored junior developers, achieving 25% improvement in code quality metrics"
       ],
       technologies: ["ASP.NET Core", "SQL Server", "Azure", "Docker"]
@@ -106,14 +83,13 @@ const DATA = {
       role: "Software Developer",
       start: "Jul 2023", 
       end: "Dec 2024",
-      location: "Hybrid",
+      location: "On-site",
       type: "Full-time",
       bullets: [
-        "Developed scalable microservices handling 10K+ concurrent users",
-        "Optimized database queries resulting in 45% performance improvement",
-        "Integrated third-party APIs reducing manual processes by 70%"
+        "Optimized database queries resulting performance improvement",
+        "Implemted RESTful Web APIs using ASP.NET Core "
       ],
-      technologies: ["ASP.NET MVC", "Entity Framework", "Redis", "RabbitMQ"]
+      technologies: ["ASP.NET MVC", "ASP.NET Core", "Entity Framework", "SQL Server"]
     },
     {
       company: "AppShark Software Pvt Ltd",
@@ -124,10 +100,9 @@ const DATA = {
       type: "Full-time",
       bullets: [
         "Built responsive web applications serving 5000+ daily active users",
-        "Collaborated with UX/UI teams to implement pixel-perfect designs",
-        "Reduced page load times by 50% through code optimization"
+        "Collaborated with UX/UI teams to implement pixel-perfect designs"
       ],
-      technologies: ["ASP.NET Core", "Angular", "SQL Server", "Bootstrap"]
+      technologies: ["ASP.NET", "ASP.NET MVC", "ASP.NET Core", "Entity Framework", "SQL Server"]
     },
     {
       company: "TATA Communications",
@@ -137,47 +112,79 @@ const DATA = {
       location: "On-site",
       type: "Full-time",
       bullets: [
-        "Monitored critical infrastructure maintaining 99.9% uptime",
-        "Implemented automated monitoring solutions reducing incident response time by 80%"
+        "Monitored critical infrastructure maintaining 99.9% uptime"
       ],
-      technologies: ["Network Monitoring", "Incident Management", "ITIL"]
+      technologies: ["Network Monitoring", "Incident Management"]
+    },
+    {
+      company: "Cybilltech Technologies Pvt Ltd",
+      role: "Soft Developer",
+      start: "Jan 2020", 
+      end: "Mar 2021",
+      location: "On-site",
+      type: "Full-time",
+      bullets: [
+        "Built responsive web applications.",
+        "Collaborated with UX/UI teams to implement pixel-perfect designs"
+      ],
+      technologies: ["ASP.NET", "ASP.NET MVC", "SQL Server"]
     }
   ],
   projects: [
     {
       name: "RAKNOC Enterprise Platform",
       role: "Lead Developer",
-      stack: ["ASP.NET Core", "SQL Server", "Redis", "Docker"],
-      description: "High-performance enterprise management system handling complex workflows and real-time data processing. Increased operational efficiency by 40% and reduced processing time by 60%.",
-      highlights: ["10K+ concurrent users", "99.9% uptime", "Real-time processing"],
-      code: "https://github.com/suresh31/raknoc",
-      demo: "#"
-    },
-    {
-      name: "Multi-Tenant SaaS Application",
-      role: "Full-Stack Developer",
-      stack: ["ASP.NET Core", "Angular", "PostgreSQL", "AWS"],
-      description: "Scalable multi-tenant platform serving 50+ enterprise clients with customizable workflows and advanced analytics dashboard.",
-      highlights: ["50+ clients", "Custom workflows", "Advanced analytics"],
+      stack: ["C#", "ASP.NET Core", "SQL Server",],
+      description: "High-performance enterprise management system handling complex workflows and real-time data processing.",
+      highlights: ["99.9% uptime", "Real-time processing"],
       code: "",
       demo: "#"
     },
     {
-      name: "Real-Time Analytics Dashboard",
-      role: "Frontend Developer",
-      stack: ["React", "D3.js", "WebSocket", "Node.js"],
-      description: "Interactive dashboard providing real-time business insights with custom visualizations and automated reporting features.",
-      highlights: ["Real-time updates", "Custom charts", "Automated reports"],
+      name: "Curvature Applications",
+      role: "Full-Stack Developer",
+      stack: ["C#", "ASP.NET Core", ".Net Framework", "SQL Server", "TFS"],
+      description: "Scalable multi-tenant platform serving 50+ enterprise clients with customizable workflows and advanced analytics dashboard.Resolve any issues that may arise a ticket regarding any issue or new changes that including troubleshooting and "
+      + "debugging based on client requirement",
+      highlights: ["Custom workflows", "Advanced analytics"],
+      code: "",
+      demo: "#"
+    },
+    {
+      name: "SxeConsoleApplication",
+      role: ".Net Developer",
+      stack: ["C#", "ASP.NET Core", "MS SQL Server"],
+      description: "It mainly works on getting data from Square Table and sending it to SXE after integrating with the SXE API.Involved in each phase of the project, taking requirements from clients and developing the application.",
+      highlights: ["Real-time updates","Automated reports"],
+      code: "",
+      demo: "#"
+    },
+    {
+      name: "TfsRemainderMails",
+      role: ".Net Developer",
+      stack: ["C#", ".Net Framework","MS SQL Server", "Task Scheduler"],
+      description: "Our system sends reminder emails when resources fail to fill timesheets. The emails are triggered every week start day.",
+      highlights: ["Real-time updates","Automated reports"],
+      code: "",
+      demo: "#"
+    },
+    {
+      name: "HR-Portal",
+      role: "Full-Stack Developer",
+      stack: ["C#","VB.NET", ".Net Framework", "SQL Server", "SVN"],
+      description: "Responsible for the day-to-day maintenance and upkeep of the company’s HR portal. This includes troubleshoot technical issues related to the HR portal and making necessary changes to the "
+      + "contentand design",
+      highlights: ["Custom workflows", "Advanced analytics"],
       code: "",
       demo: "#"
     }
   ],
   skills: {
-    backend: ["ASP.NET Core", "ASP.NET MVC", "C#", "Entity Framework", "Web API"],
+    backend: ["C#", ".NET", "ASP.NET Core", "ASP.NET MVC", "Entity Framework", "Web APIs"],
     frontend: ["Angular", "React", "JavaScript", "TypeScript", "jQuery", "HTML5", "CSS3"],
-    database: ["SQL Server", "PostgreSQL", "Redis", "MongoDB"],
-    cloud: ["Azure", "AWS", "Docker", "Kubernetes"],
-    tools: ["Visual Studio", "Git", "GitHub", "Azure DevOps", "Postman"],
+    database: ["SQL Server", "PostgreSQL"],
+    cloud: ["Azure"],
+    tools: ["Visual Studio", "Git", "GitHub", "TFS", "SVN", "Postman"],
     soft: ["Team Leadership", "Agile/Scrum", "Code Review", "Mentoring", "Problem Solving"]
   },
   education: [
@@ -196,11 +203,11 @@ const DATA = {
       location: "Andhra Pradesh"
     }
   ],
-  certifications: [
-    "Microsoft Certified: Azure Developer Associate",
-    "ASP.NET Core Certification",
-    "Agile Project Management"
-  ],
+  // certifications: [
+  //   "Microsoft Certified: Azure Developer Associate",
+  //   "ASP.NET Core Certification",
+  //   "Agile Project Management"
+  // ],
   languages: ["English (Fluent)", "Telugu (Native)", "Hindi (Conversational)"]
 };
 
@@ -214,7 +221,7 @@ const GlassCard: React.FC<{ children: React.ReactNode; className?: string; hover
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true, amount: 0.1 }}
-  
+    variants={scaleIn}
     whileHover={hover ? { 
       scale: 1.02, 
       boxShadow: "0 20px 40px rgba(168, 85, 247, 0.1)",
@@ -251,6 +258,7 @@ const AnimatedCounter: React.FC<{ value: string; label: string; icon: React.Elem
 
   return (
     <motion.div
+      variants={scaleIn}
       className="text-center p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 border border-purple-300/30"
     >
       <Icon className="w-8 h-8 mx-auto mb-2 text-purple-300" />
@@ -480,7 +488,7 @@ const SureshClaudePortfolio: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen text-slate-100 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 relative overflow-x-hidden">
+    <div className="min-h-screen text-slate-100 bg-gradient-to-br from-gray-950 via-slate-900 to-gray-950 relative overflow-x-hidden">
       <Aurora />
       
       {/* Enhanced Header */}
@@ -493,6 +501,7 @@ const SureshClaudePortfolio: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <motion.div
+              variants={fadeInLeft}
               initial="hidden"
               animate="visible"
               className="flex items-center gap-4"
@@ -511,6 +520,7 @@ const SureshClaudePortfolio: React.FC = () => {
 
             {/* Desktop Navigation */}
             <motion.nav
+              variants={fadeInRight}
               initial="hidden"
               animate="visible"
               className="hidden md:flex items-center gap-6"
@@ -569,7 +579,7 @@ const SureshClaudePortfolio: React.FC = () => {
           style={{ y: y1 }}
           className="max-w-7xl mx-auto px-4 text-center"
         >
-          <motion.div
+          {/* <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, type: "spring" }}
@@ -585,7 +595,7 @@ const SureshClaudePortfolio: React.FC = () => {
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               className="absolute inset-0 rounded-full border-2 border-dashed border-purple-400/30"
             />
-          </motion.div>
+          </motion.div> */}
 
           <motion.h1
             initial={{ y: 50, opacity: 0 }}
@@ -623,19 +633,19 @@ const SureshClaudePortfolio: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
             <motion.a
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(168,85,247,0.3)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(40, 107, 239, 0.3)", color: "rgb(244, 234, 234)" }}
               whileTap={{ scale: 0.95 }}
               href={`mailto:${DATA.email}`}
               className="px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full font-semibold text-white shadow-lg hover:shadow-purple-500/25 transition-all duration-300 flex items-center gap-2 justify-center"
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="w-5 h-5 text-white" />
               Get In Touch
             </motion.a>
             
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/resume.pdf"
+              href="src\pages\Files\ResumeSuresh.pdf"
               download
               className="px-8 py-4 border-2 border-purple-400/50 rounded-full font-semibold text-purple-300 hover:bg-purple-400/10 transition-all duration-300 flex items-center gap-2 justify-center backdrop-blur-sm"
             >
@@ -646,6 +656,7 @@ const SureshClaudePortfolio: React.FC = () => {
 
           {/* Stats Section */}
           <motion.div
+            variants={staggerContainer}
             initial="hidden"
             animate="visible"
             className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
@@ -685,7 +696,7 @@ const SureshClaudePortfolio: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-400 to-blue-800 bg-clip-text text-transparent">
                 About Me
               </span>
             </h2>
@@ -694,6 +705,7 @@ const SureshClaudePortfolio: React.FC = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
+              variants={fadeInLeft}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -733,6 +745,7 @@ const SureshClaudePortfolio: React.FC = () => {
             </motion.div>
 
             <motion.div
+              variants={fadeInRight}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
