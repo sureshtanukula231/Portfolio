@@ -49,7 +49,7 @@ const staggerContainer = {
 // ---- Enhanced Data ----
 const DATA = {
   name: "Tanukula Suresh",
-  title: "Senior .NET Developer",
+  title: ".NET Developer",
   subtitle: "Full-Stack Developer",
   location: "Mogaltur, Andhra Pradesh, India",
   phone: "+91 8096326535",
@@ -67,7 +67,7 @@ const DATA = {
   experience: [
     {
       company: "RP Web Apps Pvt Ltd",
-      role: "Senior Software Developer",
+      role: "Software Developer",
       start: "Jan 2025", 
       end: "Present",
       location: "On-site",
@@ -777,8 +777,8 @@ const SureshClaudePortfolio: React.FC = () => {
                 </div>
               </GlassCard>
 
-              <div className="flex gap-4">
-                <motion.a
+              <div className="flex gap-4 linkdinpage">
+                {/* <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href={DATA.github || "#"}
@@ -788,7 +788,7 @@ const SureshClaudePortfolio: React.FC = () => {
                 >
                   <Github className="w-6 h-6" />
                   <span className="font-medium">GitHub</span>
-                </motion.a>
+                </motion.a> */}
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -1014,7 +1014,7 @@ const SureshClaudePortfolio: React.FC = () => {
 
               <div className="mt-8 pt-6 border-t border-white/10">
                 <div className="flex justify-center gap-6">
-                  <motion.a
+                  {/* <motion.a
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
                     href={DATA.github || "#"}
@@ -1023,7 +1023,7 @@ const SureshClaudePortfolio: React.FC = () => {
                     className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
                   >
                     <Github className="w-6 h-6 text-white" />
-                  </motion.a>
+                  </motion.a> */}
                   <motion.a
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
