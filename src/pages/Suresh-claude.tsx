@@ -6,6 +6,7 @@ import {
   Download, ExternalLink, Calendar, Award, Zap, Target, Users,
   TrendingUp, Star, ChevronDown, Menu, X
 } from "lucide-react";
+import resume from "../pages/Files/ResumeSuresh.pdf"
 
 // ---- Enhanced Animation Variants ----
 
@@ -53,8 +54,8 @@ const DATA = {
   location: "Mogaltur, Andhra Pradesh, India",
   phone: "+91 8096326535",
   email: "tanukulasuresh31@gmail.com",
-  github: "",
-  linkedin: "www.linkedin.com/in/suresh-tanukula-11a85b1b6",
+  github: "#",
+  linkedin: "https://www.linkedin.com/in/suresh-tanukula-11a85b1b6",
   summary: "Passionate .NET architect with 5.8+ years of experience building scalable enterprise applications. I transform complex business requirements into elegant, high-performance solutions that drive business growth.",
   objective: "To lead innovative development teams in creating next-generation enterprise applications that exceed expectations and deliver measurable business value.",
   stats: [
@@ -645,7 +646,7 @@ const SureshClaudePortfolio: React.FC = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="src\pages\Files\ResumeSuresh.pdf"
+              href= {resume}
               download
               className="px-8 py-4 border-2 border-purple-400/50 rounded-full font-semibold text-purple-300 hover:bg-purple-400/10 transition-all duration-300 flex items-center gap-2 justify-center backdrop-blur-sm"
             >
