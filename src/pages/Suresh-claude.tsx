@@ -81,9 +81,9 @@ const DATA = {
   objective: "To lead innovative development teams in creating next-generation enterprise applications that exceed expectations and deliver measurable business value.",
   stats: [
     { label: "Years Experience", value: "5.8+", icon: Calendar },
-    { label: "Projects Delivered", value: "50+", icon: Award },
+    { label: "Projects Delivered", value: "5+", icon: Award },
     { label: "Code Quality Score", value: "98%", icon: Star },
-    { label: "Team Members Mentored", value: "15+", icon: Users }
+    // { label: "Team Members Mentored", value: "2+", icon: Users }
   ],
   experience: [
     {
