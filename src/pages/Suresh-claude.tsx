@@ -66,7 +66,7 @@ const DATA = {
   ],
   experience: [
     {
-      company: "RP Web Apps Pvt Ltd",
+      company: "RP Web Apps Pvt Ltd (A subsidiary company of Cambridge Technology Enterprises Ltd)",
       role: "Software Engineer",
       start: "Jan 2025", 
       end: "Present",
@@ -74,13 +74,12 @@ const DATA = {
       type: "Full-time",
       bullets: [
         "Architected and delivered web applications using ASP.NET Core/MVC",
-        "Led a team of 4 developers, improving overall productivity",
         "Mentored junior developers, achieving 25% improvement in code quality metrics"
       ],
-      technologies: ["ASP.NET Core", "SQL Server", "Azure", "Docker"]
+      technologies: ["ASP.NET Core", "SQL Server"]
     },
     {
-      company: "CTE Web Apps Pvt Ltd",
+      company: "CTE Web Apps Pvt Ltd (A subsidiary company of Cambridge Technology Enterprises Ltd)",
       role: "Software Engineer",
       start: "Jul 2023", 
       end: "Dec 2024",
@@ -93,7 +92,7 @@ const DATA = {
       technologies: ["ASP.NET MVC", "ASP.NET Core", "Entity Framework", "SQL Server"]
     },
     {
-      company: "AppShark Software Pvt Ltd",
+      company: "AppShark Software Pvt Ltd (A subsidiary company of Cambridge Technology Enterprises Ltd)",
       role: "Software Engineer",
       start: "Jun 2022", 
       end: "Jun 2023",
@@ -106,7 +105,7 @@ const DATA = {
       technologies: ["ASP.NET", "ASP.NET MVC", "ASP.NET Core", "Entity Framework", "SQL Server"]
     },
     {
-      company: "TATA Communications",
+      company: "TATA Communications Transformation Services ",
       role: "NOC Engineer",
       start: "Mar 2021", 
       end: "Jun 2022",
