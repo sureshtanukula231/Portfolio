@@ -67,7 +67,7 @@ const DATA = {
   experience: [
     {
       company: "RP Web Apps Pvt Ltd",
-      role: "Software Developer",
+      role: "Software Engineer",
       start: "Jan 2025", 
       end: "Present",
       location: "On-site",
@@ -81,7 +81,7 @@ const DATA = {
     },
     {
       company: "CTE Web Apps Pvt Ltd",
-      role: "Software Developer",
+      role: "Software Engineer",
       start: "Jul 2023", 
       end: "Dec 2024",
       location: "On-site",
@@ -94,7 +94,7 @@ const DATA = {
     },
     {
       company: "AppShark Software Pvt Ltd",
-      role: "Full-Stack Developer",
+      role: "Software Engineer",
       start: "Jun 2022", 
       end: "Jun 2023",
       location: "On-site",
@@ -118,8 +118,8 @@ const DATA = {
       technologies: ["Network Monitoring", "Incident Management"]
     },
     {
-      company: "Cybilltech Technologies Pvt Ltd",
-      role: "Soft Developer",
+      company: "Cybilltechs Technologies Pvt Ltd",
+      role: "Software Engineer - Trainee",
       start: "Jan 2020", 
       end: "Mar 2021",
       location: "On-site",
@@ -134,7 +134,7 @@ const DATA = {
   projects: [
     {
       name: "RAKNOC Enterprise Platform",
-      role: "Lead Developer",
+      role: "Full-Stack Developer",
       stack: ["C#", "ASP.NET Core", "SQL Server",],
       description: "High-performance enterprise management system handling complex workflows and real-time data processing.",
       highlights: ["99.9% uptime", "Real-time processing"],
@@ -209,7 +209,7 @@ const DATA = {
   //   "ASP.NET Core Certification",
   //   "Agile Project Management"
   // ],
-  languages: ["English (Fluent)", "Telugu (Native)", "Hindi (Conversational)"]
+  languages: ["English", "Telugu (Native)", "Hindi"]
 };
 
 // ---- Enhanced Components ----
