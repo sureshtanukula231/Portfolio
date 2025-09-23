@@ -151,7 +151,7 @@ const DATA = {
       demo: ""
     },
     {
-      name: "SxeConsoleApplication",
+      name: "Sxe Console Application",
       role: ".Net Developer",
       stack: ["C#", "ASP.NET Core", "MS SQL Server"],
       description: "It mainly works on getting data from Square Table and sending it to SXE after integrating with the SXE API.Involved in each phase of the project, taking requirements from clients and developing the application.",
@@ -160,7 +160,7 @@ const DATA = {
       demo: ""
     },
     {
-      name: "TfsRemainderMails",
+      name: "Tfs Remainder Mails",
       role: ".Net Developer",
       stack: ["C#", ".Net Framework","MS SQL Server", "Task Scheduler"],
       description: "Our system sends reminder emails when resources fail to fill timesheets. The emails are triggered every week start day.",
